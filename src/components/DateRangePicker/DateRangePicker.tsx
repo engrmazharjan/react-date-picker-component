@@ -1,5 +1,5 @@
 import "./DateRangePicker.css";
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
 // Helper function to check if a date is a weekend
 const isWeekend = (date: Date) => {
@@ -23,8 +23,7 @@ interface DateRangePickerProps {
   onChange: (weekdays: Date[], weekends: Date[]) => void;
 }
 
-// const DateRangePicker: React.FC<DateRangePickerProps> = ({ predefinedRanges, onChange }) => {
-const DateRangePicker = ({ predefinedRanges, onChange }: DateRangePickerProps) => {
+const DateRangePicker = ({ predefinedRanges, onChange }:DateRangePickerProps) => {
   const [startDate, setStartDate] = useState<Date | null>(null);
   const [endDate, setEndDate] = useState<Date | null>(null);
   const [month, setMonth] = useState<number>(new Date().getMonth());
