@@ -84,7 +84,7 @@ const DateRangePicker = ({ predefinedRanges, onChange }:DateRangePickerProps) =>
         >
           &lt;
         </button>
-        <span style={{ fontSize: "18px", fontWeight: "bold", margin: "0 20px" }}>{`${year}-${month + 1}`}</span>
+        <span className="year-month">{`${year}-${month + 1}`}</span>
         <button
           type="button"
           onClick={() => setMonth((prev) => (prev === 11 ? 0 : prev + 1))}
