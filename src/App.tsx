@@ -1,25 +1,13 @@
-import DateRangePicker from "./components/DateRangePicker/DateRangePicker";
-
-const predefinedRanges = [
-  {
-    label: 'Last 7 Days',
-    range: [new Date(new Date().setDate(new Date().getDate() - 7)), new Date()] as [Date, Date],
-  },
-  {
-    label: 'Last 30 Days',
-    range: [new Date(new Date().setDate(new Date().getDate() - 30)), new Date()] as [Date, Date],
-  },
-];
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import DatePicker from "./pages/DatePicker/DatePicker";
 
 function App() {
   return (
-    <DateRangePicker
-      predefinedRanges={predefinedRanges} 
-      onChange={(weekdays, weekends) => {
-        console.log('Selected Weekdays:', weekdays);
-        console.log('Selected Weekends:', weekends);
-      }} 
-    />
+    <Router>
+      <Routes>
+        <Route path="/" element={<DatePicker/>}/>
+      </Routes>
+    </Router>
   );
 }
 
